@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="src/styles.css" />
+    <script src="https://kit.fontawesome.com/4da7404164.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="shadow-sm p-3 mb-3 bg-white rounded">
+        <div class="container">
+
+            <form id="citySearch">
+                <input type="text" id=citysearch placeholder="Enter a city">
+                <button type="submit" class="btn btn-primary" id="SearchButton">Go</button>
+                <button type="submit" class="btn btn-success" id="Location">Location</button>
+                <button onClick="window.location.reload();"><i class="fas fa-sync"></i></button>
+
+            </form>
+
+            <div class="row">
+                <div class="col">
+                    <h1 id=city>
+                        City
+                    </h1>
+
+                    <ul class="weatherDetail">
+                        <li id="realTime">
+                            <strong>Thursday 10:23</strong>
+                        </li>
+                        <li>
+                            UV Index <strong class="uv">1</strong>
+                        </li>
+                        <li>
+                            Wind <strong>0 km/h</strong>
+                        </li>
+                        <li>
+                            Precipitation <strong>0%</strong>
+                        </li>
+                        <li>
+                            Humidity <strong>0%</strong>
+                        </li>
+                </div>
+                <div class="col-4">
+                    <div class="weatherVisual">
+                        <i class="fas fa-cloud-sun fa-7x"></i>
+                        </br>
+                        </br>
+                        <h2 id="temperature">
+                            20°C
+                        </h2>
+                        <form class="celsiusFahrenheit">
+                            <div class="d-grid gap-2 d-md-block">
+                                <button id="cels" class="btn btn-primary" type="button">°C</button>
+                                <button id="fahr" class="btn btn-primary" type="button">°F</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <ul class="sameDay">
+                        <li>
+                            <div class="card">
+                                <div class="card-body">
+                                    Afternoon
+                                    <div class="time1temp">22°</div>
+                                    <i class="fas fa-sun fa-2x"></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                                <div class="card-body">
+                                    Evening
+                                    <div class="time2temp">19°</div>
+                                    <i class="fas fa-sun fa-2x"></i>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                                <div class="card-body">
+                                    Night
+                                    <div class="time3temp">14°</div>
+                                    <i class="fas fa-sun fa-2x"></i>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            Friday
+                            <div class="day1temp">26°</div>
+                            <i class="fas fa-sun fa-2x"></i>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            Saturday
+                            <div class="day2temp">31°</div>
+                            <i class="fas fa-cloud-sun-rain fa-2x"></i>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            Sunday
+                            <div class="day3temp">29°</div>
+                            <i class="fas fa-sun fa-2x"></i>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            Monday
+                            <div class="day4temp">23°</div>
+                            <i class="fas fa-cloud fa-2x"></i>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <script src="src/index.js"></script>
+</body>
+
+</html>

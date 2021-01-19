@@ -1,0 +1,87 @@
+h1 {
+  color: black;
+  margin: 15px 0 0 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 48px;
+}
+
+.shadow-sm {
+  display: block;
+  margin: 50px 50px 200px 100px;
+  border-radius: 50px;
+}
+.celsiusFahrenheit {
+  text-align: center;
+}
+
+#realTime {
+  font-size: 24px;
+  padding: 0 0 30px 0;
+}
+
+.weatherDetail {
+  font-size: 20px;
+}
+
+.uv {
+  background-color: green;
+  padding: 5px;
+  color: white;
+}
+
+.fa-cloud-sun {
+  padding: 30px;
+}
+
+.fa-sun {
+  line-height: 1.5;
+}
+
+.fa-cloud-sun-rain {
+  line-height: 1.5;
+}
+
+.fa-cloud {
+  line-height: 1.5;
+}
+
+.weatherDetail {
+  list-style-type: none;
+  line-height: 40px;
+  padding: 0px;
+}
+
+.sameDay {
+  list-style-type: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+.card-body {
+  text-align: center;
+  transition: all 200ms ease-in-out;
+}
+
+.card-body:hover {
+  background: #e8e8e8;
+}
+.col-6 {
+  padding: 30px 50px;
+}
+
+body {
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  font-family: "Open Sans", sans-serif;
+}
+
+.shadow-sm {
+  width: 800px;
+  border-radius: 30px;
+}
+
+.citySearch {
+  margin: 30px 0px;
+}

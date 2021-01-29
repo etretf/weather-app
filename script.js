@@ -35,6 +35,9 @@ function showTemperature(response) {
   let cityTemperature = Math.round(response.data.main.temp);
   let todayTemperature = document.querySelector("#temperature");
   todayTemperature.innerHTML = `${cityTemperature}°C`;
+  let weatherDescription = document.querySelector("#weather-description");
+  let weatherDesc = response.data.main.weather[0].description;
+  console.log(weatherDesc);
 }
 
 //function fahrChange (response) {

@@ -22,6 +22,10 @@ h2 {
   padding: 0 0 30px 0;
 }
 
+#weather-description {
+  text-transform: capitalize;
+}
+
 .weatherDetail {
   font-size: 20px;
 }

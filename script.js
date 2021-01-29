@@ -32,12 +32,22 @@ function search(event) {
 }
 
 function showTemperature(response) {
-  let cityTemperature = Math.round(response.data.main.temp);
+  let temperatureElement = Math.round(response.data.main.temp);
   let todayTemperature = document.querySelector("#temperature");
   todayTemperature.innerHTML = `${cityTemperature}°C`;
-  let weatherDescription = document.querySelector("#weather-description");
+
+  let humidityElement = document.querySelector("#humidity");
+  let humidity = Math.round(response.data.main.humidity);
+  humidity.innerHTML = humidity;
+
+  let weatherElement = document.querySelector("#weather-description");
   let weatherDesc = response.data.main.weather[0].description;
-  console.log(weatherDesc);
+  weatherDesc.innerHTML = weatherDesc;
+
+  let windElement = Math.round(response.data.main.wind.speed);
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = windSpeed;
+
 }
 
 //function fahrChange (response) {

@@ -1,6 +1,7 @@
-h1 {
+#city {
   color: black;
   margin: 15px 0 0 0;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -70,9 +71,11 @@ h2 {
   padding: 30px 50px;
 }
 
-body {
+body,
+html {
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   font-family: "Open Sans", sans-serif;
+  height: 100%;
 }
 
 .shadow-sm {

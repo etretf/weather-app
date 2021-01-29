@@ -34,7 +34,7 @@ function search(event) {
 function showTemperature(response) {
   let temperatureElement = Math.round(response.data.main.temp);
   let todayTemperature = document.querySelector("#temperature");
-  todayTemperature.innerHTML = `${cityTemperature}°C`;
+  todayTemperature.innerHTML = `${temperatureElement}°C`;
 
   let humidityElement = document.querySelector("#humidity");
   let humidity = Math.round(response.data.main.humidity);

@@ -48,6 +48,8 @@ function showTemperature(response) {
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = windSpeed;
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.main.weather[0].icon}@2x.png`);
 }
 
 //function fahrChange (response) {

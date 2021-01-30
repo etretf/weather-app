@@ -20,19 +20,28 @@ if (minutes < 10) {
 let displayTime = document.querySelector("#realTime");
 displayTime.innerHTML = `${day} ${hour}:${minutes}`;
 
-function search(event) {
-  event.preventDefault();
+function search(city) {
+  
+  let apiKey = `9f4d1fba994d4673c7cb4a10548bae9a`;
+  let apiUrlcity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlcity).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
   let input = document.querySelector("#citysearch");
-  let city = document.querySelector("#city");
+  let cityInputElement = document.querySelector("#city");
   city.innerHTML = input.value;
   let cityPlace = input.value;
   if (cityPlace<1) {alert("Please enter a city");}
-  let apiKey = `9f4d1fba994d4673c7cb4a10548bae9a`;
-  let apiUrlcity = `https://api.openweathermap.org/data/2.5/weather?q=${cityPlace}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrlcity).then(showTemperature);
+  search(cityPlace);
 }
 
 function showTemperature(response) {
+    let cityElement = document.querySelector("#city");
     let temperature = document.querySelector("#temp");
     let windSpeed = document.querySelector("#windSpeed");
     let humidity = document.querySelector("#humidity");
@@ -43,6 +52,7 @@ function showTemperature(response) {
 
     celsiusTemperature = response.data.main.temp;
 
+    cityElement.innerHTML=response.data.name;
     temperature.innerHTML= Math.round(response.data.main.temp);
     windSpeed.innerHTML= Math.round(response.data.wind.speed);
     humidity.innerHTML= Math.round(response.data.main.humidity);
@@ -56,6 +66,10 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+//function showForecast(response) {
+  //  let forecastElement = 
+//}
 
 function displayCelsius(event) {
     event.preventDefault();
@@ -87,7 +101,7 @@ fahrenheitChange.addEventListener("click",displayFahrenheit);
 let celsiusTemperature= null;
 
 let citySearch = document.querySelector("#citySearch");
-citySearch.addEventListener("submit", search);
+citySearch.addEventListener("submit", handleSubmit);
 
 let currentLocation = document.querySelector("#location");
 currentLocation.addEventListener("click", currentLocationButton);
@@ -132,3 +146,5 @@ function handlePosition(position) {
 function currentLocationButton(){
 navigator.geolocation.getCurrentPosition(handlePosition);
 }
+
+search("Paris");

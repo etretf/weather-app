@@ -24,8 +24,13 @@ function search(event) {
   event.preventDefault();
   let input = document.querySelector("#citysearch");
   let city = document.querySelector("#city");
+
   city.innerHTML = input.value;
   let cityPlace = input.value;
+
+ // if (cityPlace < 0) {alert("Please enter a city")};
+
+
   let apiKey = `9f4d1fba994d4673c7cb4a10548bae9a`;
   let apiUrlcity = `https://api.openweathermap.org/data/2.5/weather?q=${cityPlace}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlcity).then(showTemperature);
@@ -37,20 +42,19 @@ function showTemperature(response) {
   todayTemperature.innerHTML = `${temperatureElement}°C`;
 
   let humidityElement = document.querySelector("#humidity");
-  let humidity = Math.round(response.data.main.humidity);
-  humidity.innerHTML = humidity;
+  humidityElement.innerHTML = response.data.main.humidity;
 
   let weatherElement = document.querySelector("#weather-description");
-  let weatherDesc = response.data.main.weather[0].description;
-  weatherDesc.innerHTML = weatherDesc;
+  weatherElement.innerHTML = response.data.main.weather[0].description;
 
-  let windElement = Math.round(response.data.main.wind.speed);
-  let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = windSpeed;
+    let windSpeed = document.querySelector("#wind-speed");
+    windSpeed.innerHTML = Math.round(response.data.wind.speed);
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.main.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 
 //function fahrChange (response) {
 //let fahrTemp = Math.round((response.data.main.temp)*(9/5) +32);

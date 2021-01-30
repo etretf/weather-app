@@ -147,4 +147,4 @@ function currentLocationButton(){
 navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-search("Paris");
+search("Jeonju");

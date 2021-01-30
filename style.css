@@ -4,9 +4,16 @@
   text-transform: capitalize;
 }
 
-h2 {
+#tempMain {
   text-align: center;
-  font-size: 48px;
+  font-size: 36px;
+  padding: 0;
+}
+
+.weatherIcon {
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .shadow-sm {
@@ -21,6 +28,7 @@ h2 {
 #realTime {
   font-size: 24px;
   padding: 0 0 30px 0;
+  color: rgb(114, 114, 114);
 }
 
 #weather-description {
@@ -28,11 +36,7 @@ h2 {
 }
 
 .weatherDetail {
-  font-size: 20px;
-}
-
-.fa-cloud-sun {
-  padding: 30px;
+  font-size: 24px;
 }
 
 .fa-sun {
@@ -49,8 +53,12 @@ h2 {
 
 .weatherDetail {
   list-style-type: none;
-  line-height: 40px;
+  line-height: 45px;
   padding: 0px;
+}
+
+.weatherDetail span {
+  font-weight: 800;
 }
 
 .sameDay {
@@ -85,4 +93,8 @@ html {
 
 .citySearch {
   margin: 30px 0px;
+}
+
+.ocSentence {
+  font-size: 14px;
 }

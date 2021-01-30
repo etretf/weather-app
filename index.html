@@ -47,32 +47,33 @@
                         <li id="weather-description">
                             Cloudy
                         </li>
-                
                         <li >
-                            Wind <span id="wind-speed">0 </span>km/h
-                        </li>
-                        <li >
-                            Precipitation <span id="precipitation">0</span>%
+                            Wind <span id="windSpeed">0 </span> km/h <span id="windDirection"></span>°
                         </li>
                         <li >
                             Humidity <span id="humidity">0</span>%
                         </li>
+                        <li>
+                            Pressure <span id="pressure"></span> hPa
+                        </li>
                 </div>
                 <div class="col-4">
                     <div class="weatherIcon">
-                        <i class="fas fa-cloud-sun fa-7x" id="icon"></i>
+                            <img src="" alt="Clear" class="mainIcon" id="icon"/>
+                    </div>
                         </br>
                         </br>
-                        <h2 id="temperature">
-                            20°C
+                        <h2 id="tempMain">
+                            <span id="temp">20</span>
+                            <span id="degree-unit">°C</span>
                         </h2>
                         <form class="celsiusFahrenheit">
                             <div class="d-grid gap-2 d-md-block">
-                                <button id="cels" class="btn btn-primary" type="button">°C</button>
-                                <button id="fahr" class="btn btn-primary" type="button">°F</button>
+                                <button id="celsiusButton" class="btn btn-primary active" type="button">°C</button>
+                                <button id="fahrenheitButton" class="btn btn-primary" type="button">°F</button>
                             </div>
                         </form>
-                    </div>
+            
                 </div>
 
                 <div class="col-4">

@@ -25,6 +25,11 @@
   text-align: center;
 }
 
+.celsiusFahrenheit .active {
+  background-color: #015fc5;
+  cursor: normal;
+}
+
 #realTime {
   font-size: 24px;
   padding: 0 0 30px 0;

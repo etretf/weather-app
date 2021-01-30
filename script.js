@@ -40,6 +40,8 @@ function showTemperature(response) {
     let windDirectionElement = document.querySelector("#windDirection");
     let pressureElement = document.querySelector("#pressure");
 
+    celsiusTemperature = response.data.main.temp;
+
     temperature.innerHTML= Math.round(response.data.main.temp);
     windSpeed.innerHTML= Math.round(response.data.wind.speed);
     humidity.innerHTML= Math.round(response.data.main.humidity);
@@ -56,19 +58,23 @@ function showTemperature(response) {
 
 function displayCelsius(event) {
     event.preventDefault();
-    celsiusButton.classList.add("active");
-    fahrenheitButton.classList.remove("active");
-    let temperatureElement= document.querySelector("#temperature");
+    celsiusChange.classList.add("active");
+    fahrenheitChange.classList.remove("active");
+    let unitElement= document.querySelector("#degree-unit");
+    let temperatureElement= document.querySelector("#temp");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    unitElement.innerHTML='°C';
 }
 
 function displayFahrenheit(event) {
     event.preventDefault();
-    let temperatureElement=document.querySelector("#temperature");
-    celsiusButton.classList.remove("active");
-    fahrenheitButton.classList.add("acitve");
+    let temperatureElement=document.querySelector("#temp")
+    let unitElement=document.querySelector("#degree-unit");
+    celsiusChange.classList.remove("active");
+    fahrenheitChange.classList.add("active");
     let fahrenheitTemperature = (celsiusTemperature * 9)/5 + 32;
-    temperatureElement.innerHTML= Math.round(celsiusTemperature);
+    temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+    unitElement.innerHTML='°F';
 }
 
 let celsiusChange= document.querySelector("#celsiusButton");

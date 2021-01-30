@@ -46,8 +46,6 @@ function showTemperature(response) {
     weatherDescription.innerHTML= response.data.weather[0].description;
     windDirectionElement.innerHTML= response.data.wind.deg;
     pressureElement.innerHTML=response.data.main.pressure;
-
-    console.log(response.data.wind.deg);
    
     iconElement.setAttribute(
     "src",
@@ -84,17 +82,32 @@ let celsiusTemperature= null;
 let citySearch = document.querySelector("#citySearch");
 citySearch.addEventListener("submit", search);
 
-let currentLocation = document.querySelector("#Location");
-currentLocation.addEventListener("click", showLocalTemperature);
+let currentLocation = document.querySelector("#location");
+currentLocation.addEventListener("click", currentLocationButton);
 
 function showLocalTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
-  let localTemperature = document.querySelector("#temperature");
-  let localCity = response.data.name;
-  let localCityUpdate = document.querySelector("#city");
-  localCityUpdate.innerHTML = localCity;
-  localTemperature.innerHTML = `${temperature}°C`;
+  let localCity = document.querySelector("#city")
+  let temperature = document.querySelector("#temp");
+    let windSpeed = document.querySelector("#windSpeed");
+    let humidity = document.querySelector("#humidity");
+    let weatherDescription =document.querySelector("#weather-description");
+    let iconElement = document.querySelector("#icon");
+    let windDirectionElement = document.querySelector("#windDirection");
+    let pressureElement = document.querySelector("#pressure");
+
+    localCity.innerHTML= response.data.name;
+    temperature.innerHTML= Math.round(response.data.main.temp);
+    windSpeed.innerHTML= Math.round(response.data.wind.speed);
+    humidity.innerHTML= Math.round(response.data.main.humidity);
+    weatherDescription.innerHTML= response.data.weather[0].description;
+    windDirectionElement.innerHTML= response.data.wind.deg;
+    pressureElement.innerHTML=response.data.main.pressure;
+   
+    iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function handlePosition(position) {
@@ -106,4 +119,7 @@ function handlePosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showLocalTemperature);
 }
+
+function currentLocationButton(){
 navigator.geolocation.getCurrentPosition(handlePosition);
+}

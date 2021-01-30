@@ -26,6 +26,7 @@ function search(event) {
   let city = document.querySelector("#city");
   city.innerHTML = input.value;
   let cityPlace = input.value;
+  if (cityPlace<1) {alert("Please enter a city");}
   let apiKey = `9f4d1fba994d4673c7cb4a10548bae9a`;
   let apiUrlcity = `https://api.openweathermap.org/data/2.5/weather?q=${cityPlace}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlcity).then(showTemperature);

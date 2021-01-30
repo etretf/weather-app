@@ -101,6 +101,8 @@ function showLocalTemperature(response) {
     let windDirectionElement = document.querySelector("#windDirection");
     let pressureElement = document.querySelector("#pressure");
 
+    celsiusTemperature= response.data.main.temp;
+
     localCity.innerHTML= response.data.name;
     temperature.innerHTML= Math.round(response.data.main.temp);
     windSpeed.innerHTML= Math.round(response.data.wind.speed);

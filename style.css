@@ -44,16 +44,13 @@
   font-size: 24px;
 }
 
-.fa-sun {
-  line-height: 1.5;
+#forecast {
+  list-style-type: none;
+  text-align: center;
+  font-size: 14px;
 }
-
-.fa-cloud-sun-rain {
-  line-height: 1.5;
-}
-
-.fa-cloud {
-  line-height: 1.5;
+.card-body {
+  padding: 5px;
 }
 
 .weatherDetail {
@@ -64,12 +61,6 @@
 
 .weatherDetail span {
   font-weight: 800;
-}
-
-.sameDay {
-  list-style-type: none;
-  text-align: center;
-  font-size: 14px;
 }
 
 .card-body {
